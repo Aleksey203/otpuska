@@ -31,7 +31,7 @@
 			'items'=>array(
 				array('label'=>'Заявки', 'url'=>array('/orders'), 'visible'=>!Yii::app()->user->isGuest && !Yii::app()->getModule('user')->isAdmin()),
 				array('label'=>'Регистрация работника', 'url'=>array('/user/registration'), 'visible'=>Yii::app()->user->isGuest),
-                array('label'=>'Просмотр заявок', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->getModule('user')->isAdmin()),
+                array('label'=>'Управление сотрудниками', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->getModule('user')->isAdmin()),
                 array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                 array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
             ),

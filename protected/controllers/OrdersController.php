@@ -27,18 +27,17 @@ class OrdersController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+/*			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+			),*/
+			array('deny', // allow admin user to perform 'admin' and 'delete' actions
 				'users'=>array('admin'),
 			),
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions'=>array('create','index','view'),
+                'users'=>array('@'),
+            ),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -122,7 +121,14 @@ class OrdersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Orders');
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('user_id',Yii::app()->user->id);
+
+        $dataProvider = new CActiveDataProvider('Orders', array(
+            'criteria'=>$criteria,
+        ));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -154,7 +160,9 @@ class OrdersController extends Controller
 	{
 		$model=Orders::model()->findByPk($id);
 		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+			throw new CHttpException(404,'Запрашиваемая страница не существует.');
+        if($model->user_id !== Yii::app()->user->id)
+            throw new CHttpException(403,'Для Вас доступ к этой странице запрещён');
 		return $model;
 	}
 

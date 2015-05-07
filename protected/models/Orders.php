@@ -32,6 +32,7 @@ class Orders extends CActiveRecord
 			array('user_id, start, end', 'required'),
 			array('user_id, confirmed', 'numerical', 'integerOnly'=>true),
 			array('date', 'safe'),
+			array('start, end', 'date','message'=>'Неверный формат даты.','format'=>'dd.MM.yyyy'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, date, start, end, confirmed', 'safe', 'on'=>'search'),
@@ -46,6 +47,7 @@ class Orders extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -63,6 +65,59 @@ class Orders extends CActiveRecord
 			'confirmed' => 'статус заявки',
 		);
 	}
+
+    protected function beforeValidate() {
+        if(parent::beforeValidate()) {
+            $this->user_id = Yii::app()->user->id;
+            $this->confirmed = 0;
+
+            if (strtotime($this->start)<time())
+                $this->addError('start','Начало не может быть в прошлом');
+            if (strtotime($this->end)<=strtotime($this->start))
+                $this->addError('end','Начало должно быть меньше окончания');
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    protected function beforeSave() {
+        if(parent::beforeSave()) {
+
+            $this->date = date('Y-m-d H:i:s');
+            $this->start = date('Y-m-d', strtotime($this->start));
+            $this->end = date('Y-m-d', strtotime($this->end));
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    protected function afterFind() {
+        $start = date('d.m.Y', strtotime($this->start));
+        $this->start = $start;
+        $end = date('d.m.Y', strtotime($this->end));
+        $this->end = $end;
+        $date = date('d.m.Y H:i:s', strtotime($this->date));
+        $this->date = $date;
+        switch ($this->confirmed) {
+            case 0:
+                $this->confirmed = "на рассмотрении";
+                break;
+            case 1:
+                $this->confirmed = "одобрена";
+                break;
+            case -1:
+                $this->confirmed = "отклонена";
+                break;
+        }
+
+        parent::afterFind();
+    }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

@@ -70,6 +70,13 @@ return array(
             // enable cookie-based authentication
             'class' => 'WebUser',
         ),
+        'widgetFactory'=>array(
+            'widgets'=>array(
+                'CJuiDatePicker'=>array(
+                    'language'=>'ru',
+                ),
+            ),
+        ),
 		/*'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

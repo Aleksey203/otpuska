@@ -21,13 +21,41 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'start'); ?>
-		<?php echo $form->textField($model,'start'); ?>
+		<?php //echo $form->textField($model,'start'); ?>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'name' => 'start',
+            'model' => $model,
+            'attribute' => 'start',
+            'language' => 'ru',
+            'options' => array(
+                'showAnim' => 'fold',
+                'minDate' => '1',
+                'numberOfMonths' => array(2,3),
+            ),
+            'htmlOptions' => array(
+                'style' => 'height:20px;'
+            ),
+        ));?>
 		<?php echo $form->error($model,'start'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'end'); ?>
-		<?php echo $form->textField($model,'end'); ?>
+		<?php //echo $form->textField($model,'end'); ?>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'name' => 'end',
+            'model' => $model,
+            'attribute' => 'end',
+            'language' => 'ru',
+            'options' => array(
+                'showAnim' => 'fold',
+                'minDate' => '2',
+                'numberOfMonths' => array(2,3),
+            ),
+            'htmlOptions' => array(
+                'style' => 'height:20px;'
+            ),
+        ));?>
 		<?php echo $form->error($model,'end'); ?>
 	</div>
 
