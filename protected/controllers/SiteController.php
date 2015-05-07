@@ -2,6 +2,7 @@
 
 class SiteController extends Controller
 {
+    public $defaultAction='login';
 	/**
 	 * Declares class-based actions.
 	 */
@@ -91,8 +92,14 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(array('/user'));
+			if($model->validate() && $model->login()) {
+                if (Yii::app()->getModule('user')->isAdmin())
+                    $this->redirect(array('/user/admin'));
+                else
+                    $this->redirect(array('/orders'));
+            }
+
+
 				//$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form

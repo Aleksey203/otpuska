@@ -2,7 +2,7 @@
 
 class DefaultController extends Controller
 {
-	
+
 	/**
 	 * Lists all models.
 	 */

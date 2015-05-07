@@ -242,3 +242,196 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/index.php?r=orders/view&id=5
 ---
+2015/05/07 20:38:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/user/view&id=2
+HTTP_REFERER=http://otpusk/index.php?r=user
+---
+2015/05/07 20:49:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/user/view&id=3
+HTTP_REFERER=http://otpusk/index.php?r=user
+---
+2015/05/07 20:49:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/user/view&id=3
+HTTP_REFERER=http://otpusk/index.php?r=user
+---
+2015/05/07 20:49:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/user/view&id=3
+HTTP_REFERER=http://otpusk/index.php?r=user
+---
+2015/05/07 20:49:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/user/view&id=3
+HTTP_REFERER=http://otpusk/index.php?r=user
+---
+2015/05/07 20:49:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/user
+---
+2015/05/07 20:53:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#1 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#9 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user
+---
+2015/05/07 20:59:32 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 20:59:35 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 20:59:37 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 20:59:42 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 20:59:46 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 20:59:51 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:00:00 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:00:01 [error] [php] mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() (D:\Server\data\htdocs\yii\otpusk\protected\modules\user\UserModule.php:235)
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\actions\CInlineAction.php(49): RegistrationController->actionRegistration()
+#1 D:\Server\data\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(286): RegistrationController->runAction()
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(265): RegistrationController->runActionWithFilters()
+#4 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): RegistrationController->run()
+#5 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Server\data\htdocs\yii\otpusk\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/registration
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\UserModule.php (235)
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (51)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:37 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:40 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:43 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:46 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:50 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:54 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:01:59 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:02:06 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:02:08 [error] [php] mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() (D:\Server\data\htdocs\yii\otpusk\protected\modules\user\UserModule.php:235)
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\actions\CInlineAction.php(49): RegistrationController->actionRegistration()
+#1 D:\Server\data\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\Server\data\htdocs\yii\framework\web\CController.php(286): RegistrationController->runAction()
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(265): RegistrationController->runActionWithFilters()
+#4 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): RegistrationController->run()
+#5 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\Server\data\htdocs\yii\otpusk\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/registration
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\UserModule.php (235)
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (51)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)
+2015/05/07 21:02:15 [warning] [application] Не удалось присвоить небезопасный атрибут "verifyCode" класса "RegistrationForm".
+in D:\Server\data\htdocs\yii\otpusk\protected\modules\user\controllers\RegistrationController.php (27)
+in D:\Server\data\htdocs\yii\otpusk\index.php (13)

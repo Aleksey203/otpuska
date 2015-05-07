@@ -10,6 +10,7 @@
 
 class UserModule extends CWebModule
 {
+    public $defaultController='admin';
 	/**
 	 * @var int
 	 * @desc items on page
@@ -32,19 +33,19 @@ class UserModule extends CWebModule
 	 * @var boolean
 	 * @desc use email for activation user account
 	 */
-	public $sendActivationMail=true;
+	public $sendActivationMail=false;
 	
 	/**
 	 * @var boolean
 	 * @desc allow auth for is not active user
 	 */
-	public $loginNotActiv=false;
+	public $loginNotActiv=true;
 	
 	/**
 	 * @var boolean
 	 * @desc activate user on registration (only $sendActivationMail = false)
 	 */
-	public $activeAfterRegister=false;
+	public $activeAfterRegister=true;
 	
 	/**
 	 * @var boolean
