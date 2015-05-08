@@ -152,7 +152,12 @@ class OrdersController extends Controller
     public function actionCalend()
     {
         $this->layout = '//layouts/column1';
-        $month = date('m')+1;
+        $month = date('m');
+        if(Yii::app()->request->isAjaxRequest) {
+            $data['success'] = false;
+            $month = date('m',intval($_GET['month']));
+        }
+
         $model['month'] = $month;
         $model['monthStart'] = mktime(0,0,0,$month,1,date('Y'));
         $model['monthNext'] = mktime(0,0,0,$month+1,1,date('Y'));
@@ -178,14 +183,20 @@ class OrdersController extends Controller
                         $duration = date('t',$model['monthStart']) - $diff;
                     }
 
-                    $model['users'][$k]['orders'][] = array('start'=>$diff,'duration'=>$duration);
+                    $model['users'][$k]['orders'][] = array('start'=>$diff,'duration'=>$duration,'confirmed'=>$order->confirmed);
                 }
             }
         }
-
-        $this->render('calend',array(
-            'model'=>$model
-        ));
+        if(Yii::app()->request->isAjaxRequest) {
+            $data['html'] = $this->renderPartial('_month',array(
+                'model'=>$model
+            ),true);
+            $data['success'] = true;
+            echo json_encode($data);
+        } else
+            $this->render('calend',array(
+                'model'=>$model
+            ));
     }
 
 	/**

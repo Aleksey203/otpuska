@@ -229,14 +229,18 @@ div.search-form
 }
 
 #calend .current{text-align: center; font: 24px Arial; padding-bottom: 10px;}
-#calend .prev{float: left; font: 18px Arial; }
-#calend .next{float: right; font: 18px Arial; }
+#calend .month{ font: 18px Arial; }
+#calend .prev{float: left;}
+#calend .next{float: right;}
 #calend .prev a,.next a{text-decoration: none;}
 #calend .name{white-space: nowrap; padding-right: 10px; }
 #calend table{width: 100%; border-collapse: collapse;}
 #calend table th{padding: 4px; width: 28px; text-align: center;}
 #calend table td{padding: 4px; text-align: center; border: 1px solid #999; height: 14px;}
-#calend table td.active{background: blue;}
+#calend table td.active{}
+#calend table td.active.blue{background: blue;}
+#calend table td.active.green{background: green;}
+#calend table td.active.orangered{background: orangered;}
 #calend table td:first-child{ text-align: left;}
 
 .help{float: right;}
