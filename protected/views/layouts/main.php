@@ -62,6 +62,6 @@ $assetsManager->registerScriptFile($assetsUrl.'/js/main.js');
 	</div><!-- footer -->
 
 </div><!-- page -->
-
+<div id="modal"></div>
 </body>
 </html>

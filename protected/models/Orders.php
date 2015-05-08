@@ -69,16 +69,17 @@ class Orders extends CActiveRecord
 
     protected function beforeValidate() {
         if(parent::beforeValidate()) {
-            $this->user_id = Yii::app()->user->id;
-            $this->confirmed = 0;
-            $start = strtotime($this->start);
-            $end = strtotime($this->end);
-            $this->duration = ($end-$start)/24/60/60;
-            if ($start<time())
-                $this->addError('start','Начало не может быть в прошлом');
-            if ($end<=$start)
-                $this->addError('end','Начало должно быть меньше окончания');
-
+            if ($this->isNewRecord) {
+                $this->user_id = Yii::app()->user->id;
+                $this->confirmed = 0;
+                $start = strtotime($this->start);
+                $end = strtotime($this->end);
+                $this->duration = ($end-$start)/24/60/60;
+                if ($start<time())
+                    $this->addError('start','Начало не может быть в прошлом');
+                if ($end<=$start)
+                    $this->addError('end','Начало должно быть меньше окончания');
+            }
             return true;
         } else {
             return false;
@@ -88,11 +89,11 @@ class Orders extends CActiveRecord
 
     protected function beforeSave() {
         if(parent::beforeSave()) {
-
-            $this->date = date('Y-m-d H:i:s');
+            if ($this->isNewRecord) {
+                $this->date = date('Y-m-d H:i:s');
+            }
             $this->start = date('Y-m-d', strtotime($this->start));
             $this->end = date('Y-m-d', strtotime($this->end));
-
             return true;
         } else {
             return false;
@@ -101,24 +102,25 @@ class Orders extends CActiveRecord
 
 
     protected function afterFind() {
-        $start = date('d.m.Y', strtotime($this->start));
-        $this->start = $start;
-        $end = date('d.m.Y', strtotime($this->end));
-        $this->end = $end;
-        $date = date('d.m.Y H:i:s', strtotime($this->date));
-        $this->date = $date;
-        switch ($this->confirmed) {
-            case 0:
-                $this->confirmed = "на рассмотрении";
-                break;
-            case 1:
-                $this->confirmed = "одобрена";
-                break;
-            case -1:
-                $this->confirmed = "отклонена";
-                break;
+        if (Yii::app()->controller->action->id!='calend') {
+            $start = date('d.m.Y', strtotime($this->start));
+            $this->start = $start;
+            $end = date('d.m.Y', strtotime($this->end));
+            $this->end = $end;
+            $date = date('d.m.Y H:i:s', strtotime($this->date));
+            $this->date = $date;
+            switch ($this->confirmed) {
+                case 0:
+                    $this->confirmed = "на рассмотрении";
+                    break;
+                case 1:
+                    $this->confirmed = "одобрена";
+                    break;
+                case -1:
+                    $this->confirmed = "отклонена";
+                    break;
+            }
         }
-
         parent::afterFind();
     }
 

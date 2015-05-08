@@ -156,6 +156,11 @@ class OrdersController extends Controller
         if(Yii::app()->request->isAjaxRequest) {
             $data['success'] = false;
             $month = date('m',intval($_GET['month']));
+            if (isset($_GET['order']) AND isset($_GET['status'])) {
+                $_order = Orders::model()->findByPk(intval($_GET['order']));
+                $_order->confirmed = $_GET['status'];
+                $data['thx'] = ($_order->save(true,array('confirmed'))) ? 'Изменения внесены!' : 'Ошибка при сохранении данных';
+            }
         }
 
         $model['month'] = $month;
@@ -183,7 +188,7 @@ class OrdersController extends Controller
                         $duration = date('t',$model['monthStart']) - $diff;
                     }
 
-                    $model['users'][$k]['orders'][] = array('start'=>$diff,'duration'=>$duration,'confirmed'=>$order->confirmed);
+                    $model['users'][$k]['orders'][] = array('start'=>$diff,'duration'=>$duration,'confirmed'=>$order->confirmed,'id'=>$order->id);
                 }
             }
         }

@@ -10,7 +10,7 @@ echo '</pre>';*/
 <div class="months">
     <div class="prev month"><a href="#<?=$model['monthPrev'];?>"><< <?php echo Yii::app()->dateFormatter->format('LLLL yyyy', $model['monthPrev']);?></a></div>
     <div class="next month"><a href="#<?=$model['monthNext'];?>"><?php echo Yii::app()->dateFormatter->format('LLLL yyyy', $model['monthNext']);?> >></a></div>
-    <div class="current"><?php echo Yii::app()->dateFormatter->format('LLLL yyyy', $model['monthStart']);?></div>
+<div class="current" name="<?=$model['monthStart'];?>"><?php echo Yii::app()->dateFormatter->format('LLLL yyyy', $model['monthStart']);?></div>
 </div>
 <table>
     <tr>
@@ -20,21 +20,23 @@ echo '</pre>';*/
         <?php } ?>
     </tr>
 
-    <?php foreach ($model['users'] as $user) {
+    <?php foreach ($model['users'] as $k1=>$user) {
+        $odd = (fmod($k1,2)==1) ? 'odd' : '';
+
             if (isset($user['orders'])) {
                 foreach ($user['orders'] as $k=>$order) {
                     switch ($order['confirmed']) {
-                        case "на рассмотрении":
+                        case 0:
                             $status = "blue";
                             break;
-                        case "одобрена":
+                        case 1:
                             $status = "green";
                             break;
-                        case "отклонена":
+                        case -1:
                             $status = "orangered";
                             break;
                     }?>
-                    <tr data-user="<?=$user['id'];?>">
+                    <tr class="<?=$odd;?>" data-user="<?=$user['id'];?>"  data-order="<?=$order['id'];?>">
                         <?php if ($k==0) { ?>
                             <td rowspan="<?=count($user['orders']);?>"><b class="name"><?=$user['first_name'];?> <?=$user['last_name'];?></b></td>
                         <?php } ?>
@@ -52,7 +54,7 @@ echo '</pre>';*/
                     </tr>
                 <?php }
             } else { ?>
-                <tr>
+                <tr class="<?=$odd;?>">
                     <td><b class="name"><?=$user['first_name'];?> <?=$user['last_name'];?></b></td>
                 <?php for ($i=1;$i<=$monthDays;$i++) { ?>
                     <td></td>

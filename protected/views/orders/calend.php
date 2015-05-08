@@ -17,3 +17,14 @@ $this->breadcrumbs=array(
 <?php $this->renderPartial('_month', array(
     'model'=>$model)); ?>
 </div>
+
+<b>Для редактирования заявки - нажмите на цветную полосу заявки.</b>
+<div id="one-click" style="display: none;">
+    <div class="box">
+        <span class="arrow"></span>
+        <a class="button approve" href="#">Одобрить</a>
+        <a class="button decline" href="#">Отклонить</a>
+        <div class="text"></div>
+    </div>
+
+</div>
