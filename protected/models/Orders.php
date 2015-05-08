@@ -29,13 +29,13 @@ class Orders extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, start, end', 'required'),
-			array('user_id, confirmed', 'numerical', 'integerOnly'=>true),
+			array('user_id, start, end, duration', 'required'),
+			array('user_id, confirmed, duration', 'numerical', 'integerOnly'=>true),
 			array('date', 'safe'),
 			array('start, end', 'date','message'=>'Неверный формат даты.','format'=>'dd.MM.yyyy'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, date, start, end, confirmed', 'safe', 'on'=>'search'),
+			array('id, user_id, date, start, end, confirmed, duration', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +62,7 @@ class Orders extends CActiveRecord
 			'date' => 'дата заявки',
 			'start' => 'начало отпуска',
 			'end' => 'окончание отпуска',
+			'duration' => 'длительность отпуска',
 			'confirmed' => 'статус заявки',
 		);
 	}
@@ -70,10 +71,12 @@ class Orders extends CActiveRecord
         if(parent::beforeValidate()) {
             $this->user_id = Yii::app()->user->id;
             $this->confirmed = 0;
-
-            if (strtotime($this->start)<time())
+            $start = strtotime($this->start);
+            $end = strtotime($this->end);
+            $this->duration = ($end-$start)/24/60/60;
+            if ($start<time())
                 $this->addError('start','Начало не может быть в прошлом');
-            if (strtotime($this->end)<=strtotime($this->start))
+            if ($end<=$start)
                 $this->addError('end','Начало должно быть меньше окончания');
 
             return true;

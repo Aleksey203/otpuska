@@ -227,3 +227,20 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+#calend .current{text-align: center; font: 24px Arial; padding-bottom: 10px;}
+#calend .prev{float: left; font: 18px Arial; }
+#calend .next{float: right; font: 18px Arial; }
+#calend .prev a,.next a{text-decoration: none;}
+#calend .name{white-space: nowrap; padding-right: 10px; }
+#calend table{width: 100%; border-collapse: collapse;}
+#calend table th{padding: 4px; width: 28px; text-align: center;}
+#calend table td{padding: 4px; text-align: center; border: 1px solid #999; height: 14px;}
+#calend table td.active{background: blue;}
+#calend table td:first-child{ text-align: left;}
+
+.help{float: right;}
+.help div{color: #fff; padding: 5px; border: 1px solid #555; float: right; margin-left: 30px;}
+.help .blue{background: blue;}
+.help .green{background: green;}
+.help .orangered{background: orangered;}

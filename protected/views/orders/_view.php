@@ -20,6 +20,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('end')); ?>:</b>
 	<?php echo CHtml::encode($data->end); ?>
 	<br />
+	<b><?php echo CHtml::encode($data->getAttributeLabel('duration')); ?>:</b>
+	<?php echo CHtml::encode($data->duration); ?>
+	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('confirmed')); ?>:</b>
 	<?php echo CHtml::encode($data->confirmed); ?>

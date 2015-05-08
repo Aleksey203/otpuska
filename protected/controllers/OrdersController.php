@@ -27,12 +27,12 @@ class OrdersController extends Controller
 	public function accessRules()
 	{
 		return array(
-/*			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),*/
-			array('deny', // allow admin user to perform 'admin' and 'delete' actions
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				//'actions'=>array('calend','admin','update'),
 				'users'=>array('admin'),
+			),
+			array('deny', // allow admin user to perform 'admin' and 'delete' actions
+                'users'=>array('admin'),
 			),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions'=>array('create','index','view'),
@@ -107,14 +107,14 @@ class OrdersController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	/*public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
+	}*/
 
 	/**
 	 * Lists all models.
@@ -149,6 +149,45 @@ class OrdersController extends Controller
 		));
 	}
 
+    public function actionCalend()
+    {
+        $this->layout = '//layouts/column1';
+        $month = date('m')+1;
+        $model['month'] = $month;
+        $model['monthStart'] = mktime(0,0,0,$month,1,date('Y'));
+        $model['monthNext'] = mktime(0,0,0,$month+1,1,date('Y'));
+        $model['monthPrev'] = mktime(0,0,0,$month-1,1,date('Y'));
+        //запрос на заявки у которых старт меньше или равен текущему месяцу, а окончание больше или равно текущему месяцу
+        $monthEnd=date('Y-m-d',mktime(0,0,0,$month+1,1,date('Y')));
+        $monthStart=date('Y-m-d',mktime(0,0,0,$month,1,date('Y')));
+        $orders=Orders::model()->findAll('start<:monthEnd && end>=:monthStart',array(':monthEnd'=>$monthEnd,':monthStart'=>$monthStart));
+        $profile = Profile::model()->findAll();
+        foreach ($profile as $k=>$user) {
+            $model['users'][$k] = array('id'=>$user->user_id,'first_name'=>$user->first_name,'last_name'=>$user->last_name);
+            foreach ($orders as $order) {
+                if ($user->user_id==$order->user_id) {
+                    $start = strtotime($order->start);
+                    $diff = ($start - mktime(0,0,0,$month,1,date('Y')))/24/3600;
+                    $duration = $order->duration;
+                    if ($diff<0) {
+                        $duration = $duration+$diff;
+                        $diff = 0;
+                    }
+                    $diff++;
+                    if (($diff+$duration)>date('t',$model['monthStart'])) {
+                        $duration = date('t',$model['monthStart']) - $diff;
+                    }
+
+                    $model['users'][$k]['orders'][] = array('start'=>$diff,'duration'=>$duration);
+                }
+            }
+        }
+
+        $this->render('calend',array(
+            'model'=>$model
+        ));
+    }
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -161,7 +200,7 @@ class OrdersController extends Controller
 		$model=Orders::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'Запрашиваемая страница не существует.');
-        if($model->user_id !== Yii::app()->user->id)
+        if($model->user_id !== Yii::app()->user->id AND !Yii::app()->getModule('user')->isAdmin())
             throw new CHttpException(403,'Для Вас доступ к этой странице запрещён');
 		return $model;
 	}

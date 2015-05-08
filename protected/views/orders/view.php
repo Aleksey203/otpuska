@@ -26,6 +26,7 @@ $this->menu=array(
 		'date',
 		'start',
 		'end',
+		'duration',
 		'confirmed',
 	),
 )); ?>

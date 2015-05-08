@@ -82,7 +82,7 @@ class UserModule extends CWebModule
 	 * @see http://www.yiiframework.com/doc/guide/database.arr
 	 */
 	public $relations = array(
-        'orders'=>array(User::HAS_MANY, 'Order', 'user_id'),
+        'orders'=>array(User::HAS_MANY, 'Orders', 'user_id'),
     );
 	
 	/**
