@@ -1,10 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Moscow');
-<<<<<<< HEAD
-// change the following paths if necessary - third remote
-=======
+
 // change the following paths if necessary - third local
->>>>>>> index.php change2
 $yii=dirname(__FILE__).'/../framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
