@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 /assets
+/protected/runtime
 *.xml
 *.png
 *.jpeg

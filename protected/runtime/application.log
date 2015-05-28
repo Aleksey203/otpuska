@@ -1378,3 +1378,93 @@ Stack trace:
 REQUEST_URI=/index.php?r=orders/calend&order=4&status=-1&month=1430427600
 HTTP_REFERER=http://otpusk/index.php?r=orders/calend
 ---
+2015/05/08 15:48:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Необходима авторизация' in D:\Server\data\htdocs\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#2 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calend')
+#9 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/calend')
+#10 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=orders/calend&month=1433106000
+HTTP_REFERER=http://otpusk/index.php?r=orders/calend
+---
+2015/05/08 15:48:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Необходима авторизация' in D:\Server\data\htdocs\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#2 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calend')
+#9 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/calend')
+#10 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=orders/calend&month=1433106000
+HTTP_REFERER=http://otpusk/index.php?r=orders/calend
+---
+2015/05/08 15:48:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Необходима авторизация' in D:\Server\data\htdocs\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#2 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calend')
+#9 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/calend')
+#10 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=orders/calend&month=1433106000
+HTTP_REFERER=http://otpusk/index.php?r=orders/calend
+---
+2015/05/08 17:39:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Необходима авторизация' in D:\Server\data\htdocs\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#2 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calend')
+#9 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/calend')
+#10 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=orders/calend&month=1435698000
+HTTP_REFERER=http://otpusk/index.php?r=orders/calend
+---
+2015/05/08 21:37:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Необходима авторизация' in D:\Server\data\htdocs\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 D:\Server\data\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), '\xD0\xA3 \xD0\xB2\xD0\xB0\xD1\x81 \xD0\xBD\xD0\xB5\xD0...')
+#2 D:\Server\data\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 D:\Server\data\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\Server\data\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Server\data\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Server\data\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Server\data\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('calend')
+#9 D:\Server\data\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orders/calend')
+#10 D:\Server\data\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Server\data\htdocs\yii\otpusk\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=orders/calend&order=10&status=1&month=1430427600
+HTTP_REFERER=http://otpusk/index.php?r=orders/calend
+---
